@@ -17,6 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 TEMPLATE_DIR = Path(BASE_DIR)/'templates'
 STATIC_DIR = Path(BASE_DIR)/'static'
+CSS_DIR = Path(BASE_DIR)/'static/css'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -124,4 +125,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
+    CSS_DIR
 ]

@@ -5,12 +5,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static "css/mystyle.css"%}">
-  <title>MuMu and Pizzapie</title>
+  <link rel="stylesheet" href="{% static "mystyle.css"%}">
+  <title>Django Level Two</title>
 </head>
 <body>
-  <h1>this is a pic of my dingus cats</h1>
-  <img src="{% static "images/IMG_7515.jpg" %}" alt="mumu and pp">
-  
+  <h1>Hi welcome to Django level two </h1>
+  <h2>Here are your access records:</h2>
+
+  <div class="djangotwo">
+    {% if access_records %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Accessed</th>
+        </thead>
+    
+        {% for acc in access_records%}
+        <tr>
+          <td>{{ acc.name }}</td>
+          <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+        <p>NO ACCESS RECORDS FOUND</p>
+      {% endif %}
+  </div>  
 </body>
 </html>
